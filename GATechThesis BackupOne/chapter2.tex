@@ -1,0 +1,171 @@
+\chapter{Fundamentals}
+
+
+
+
+
+
+\section{Introduction}
+In society today we see various different networks all around us, from rail line that connects cities to the cables that connect networks together forming the internet, from airline routes that connects countries and cities to brain neural pathways, "Networks" is a simple term mostly used to to describe such structures. With millions of people all around our communities learning what this term means as well as using it in their everyday conversation, the complicated task of analyzing this network has just recently began to possible with the advancement in today computers, today in various different fields, various research use this term to refer to various different abstract structure with paths and point of intersection and are able to model various relationships edges between nodes, nodes referring to the cities, computers while the edges referring to the rails and cables. Various area of sciences that use mathematics like Graph theory continue till this day to analyses and study the various features of this structures and their various applications in our societies, this research has lead to the creation of sub fields like complex network analysis. Today in various different fields networks of various different kinds are represented as graphs.   
+
+
+\section{Literature Reviews}
+\subsection{History of social Network?}
+As early as the 80's people argued among themselves that various social groups could exists having direct social ties that linked various individuals with similar belief and values. Georg Simmel a German Scientist in the 1980s was among the first to write directly in terms of social network terms, he introduced the fundamental concept of social networks in his essay which pointed out the nature of networks, at the time no advancement occurred, but as time past other researcher began investigating the concept, and how the idea of social network could applied in various fields like psychology, sociology, economics, mathematics and statistical physics\cite{scottSocial},
+other scholars like Moreno began investigating the systematic analysis of social interaction in small groups, and W.Lloyd Warner explored various interpersonal relationships that happen in a network.  today the concept of social network is used in a wide range of field having various meaning and is used to mean different things in different context. 
+
+ As of 1970, many scholar began working together to combine the various knowledge of social network accumulated at that time, among one of this group had people like Charles Tilly, who focused on networks in political and community sociology and social movement, as well as Stangley Milgram, who later developed the "six degrees of separation" thesis.  Other research group most notably the group centered around Linton Freeman began investigated the topic social networks and it various mathematical application 
+
+Here we use Social network to refer to a sequence of node interconnected by one or more relation\cite{scott2011social} that showcases the relationships between this nodes, how they communicated and support the overall network structure. Depending on the literature, any of the terms like vertices, players, node, links, edges will be used to represent actors and their relationship in a network, also depending of the context this network could represent terrorist activities around the city, paper published by a particular journal in the city
+
+Borgatti, Mehra, Brass and Labianca \cite{borgattinetwork} found in 2009 that within a social network they where three type of relationships between the actors in the network: the first kind of relationship is based on the interaction involves the constant interchange of messages between two parties or nodes like communication two friends communicating with one another through chat or speaking to one another, the second kind of relationship involves two nodes having similar attribute like their location within the network, and the final kind of relationship that can happen between nodes is one based on their social relationships, it is usually characterized by one node ability to learn about it from it environment , example will be like a node monitoring its resources like it memory. 
+
+
+\subsection{Social Network Modeling}
+Social network are modeled using Graph, the first every use of graphs was by mathematician Leonard Euler in 1736, where he used graph to solve the Konigsberg Bridge problem , the question the problem pose was whether it was possible to walk through the city of Konigsberg\cite{westIntroduction} once and only once, which occupied two islands,was divided into four landmasses by its rivers and was linked by seven bridges. Euler reduced this problem to node representing landmasses and edges representing the bridges, and was able to prove the problem had no solution. 
+While  Euler initial study and use of graph mapped a relatively small abstract structure, modern day problem involves mapping complex structure like the relationships between various different network that make up the internet. While the scale of today problems differ in scale, the tools and thought process involved in solving them fundamentally remain the same.
+
+Today in the field of Computer Science a graph ${G}$ is defined as a triple consisting of a vertex set ${V(G)}$ , an edge set ${E(G)}$ , and a relation that associates with each edge two vertices(not necessarily distinct) called its endpoints, represented as ${G = (V, E)}$ \cite{westIntroduction}
+
+A graph ${G}$ is considered to be undirected when all the edges are bidirectional and the vertices of the graph are unordered, each vertex ${v}$ in such a graph can be qualified by it degree denoted ${deg(v)}$, is value value is the number of edges incident to the vertex, with loops on such a vertex counted twice.  A walk is a sequence ${v_0, e_1, v_1, ....., v_k}$ of graph vertices ${v_i}$ and graph edges ${e_i}$ such that for ${1 \leq i \geq k}$, the edge ${e_i}$ has endpoints ${v_{i-1}}$ and ${v_i}$\cite{westIntroduction}. A path is a trail which all vertices  included in the walk is distinct, expect possible the first or last.  The distance between two vertices in a graph is the number of edges in a shortest path connecting them,  this distance is sometimes called geodesic distance. There may exist more than one shortest path between the nodes. A graph ${G}$ is considered to be connected  when there is a path between every pair of vertices, in such a graph every vertex in the graph is reachable. A cycle is a graph that consists of a number of vertices connected in a closed chain, with at least distinct edges in which the source and the target are the same.  The cycle graph with n vertices is called ${C_n}$
+
+A digraph${G}$ is a directed graph whose edges are formed in ordered pairs of vertices such that ${(u, v) \in E \neq (v, u)  \in E}$. In a digraphs every vertex in the graph can have either an in-degree or an out-degree. The in-degree ${\alpha^{in }_D}$ of a vertex ${v}$ is giving by the number of head ends adjacent to ${v}$., while the out-degree  
+${\alpha^{out }_D}$ of a vertex v is the number of tails ends adjacent to that ${v}$.aka the branching factor . the various ideas and concept like cycle, path are extended to directed graph.  while the distance between two node can also be measured in a digraph its not the same as the distance between two nodes in an undirected graph. 
+
+The neighborhood ${N(v)}$ of a vertex ${v}$ in a graph ${G}$ is the induced sub-graph of G consisting of all vertices adjacent to  ${v}$ but not include ${v}$ itself. 
+
+A graph ${G}$ can be implemented using a two-dimensional matrix, in this matrix each of the rows and columns represent a vertex in the graph. the value that is stored in the cell at the intersection of row${v}$ and column ${w}$ indicates if there is an edge from vertex ${v}$ to vertex ${w}$. we can call this vertices adjacent vertices. 
+Adjacency matrix ${A = (a_{uv}}$, is the starting point of the centrality computation, it properties are essential  and will be discussed further in the section about centrality, this 
+
+\subsection{Network properties}
+Today network a made up of a number of nodes which determine its overall size, a graph is considered to be a dense graph if the number of edges that comprise the graph is close tot he maximal number of edges possible in such a graph. while in contrast a graph with only a few edges in considered to be a spares graph. The distinction between the two graph are usually ambiguous and as such this graphs can appear differently depending on the context. a different quantitative measure used to measure and study complex network is called reciprocity. Formally reciprocity is defined as the probability vertices in a directed network are mutually linked. The clustering coefficient of a specific node in a graph is a measure of the degree to which nodes in the graph tend to cluster together. this basically is the likelihood  that two randomly selected friends in a network are also friends in an un-directed graph representation of the network. The Homophily of a graph showcase  the concept of "Birds of a feather flock together" in a network, this basically say that people who share common characteristics like race, language and ethnicity are more inclined to relate and communicate better together.  
+
+\section{Centrality in Social Networks}  
+Measuring individual influence of actors in a network is a conceptual issue that has motivated the creation of various different measurement criteria used to measure a node influence in a network, various of this method differ from one another and use different yardstick for measuring influence, while many different people have different view of how centrality in a network can be measured, they all agree on the impact an influential node can have on a network. And thus an influential node in a network  is categorized into two type; this is usually depending on the context. This actor can either be considered to impact the spread of information: people who influence other people , or this actor can showcase some combination of various desirable attributes like trustworthiness, expertise or network attributes like connectivity.\cite{kellerInfluentials} this actor  referred to as an influencers have different names in different literature, some refer to them as key-players, other call them prestigious or spreaders etc.  This day various different business often find it beneficial to find, access and quantify the prestige of spreaders in their network, since various of this actors are able to reach large number of audience with a very little effort or marketing cost, particularly using today's technology. The process of discovering the various influential actors in a network requires the use of the various developed centrality measures(CM). 
+
+
+\subsection{What is Centrality?}
+One can only determine what centrality does\cite{freemanDevelopment}. the different measures of centrality can be used to discover important node as well as quantify the extent to which this central nodes interacts with the other nodes inside the network. The higher the number of nodes a particular node is connected to the higher it's centrality\cite{bonacich1987power}.
+Different researchers have been able to use centrality measure as an indicator to identify important actors in a social network and explain how this actors abilities are connected with the network\cite{burt1997contingent}. Many proving the important of the measure of centrality in social networks. 
+
+Wasserman \& Faust demonstrated that central nodes in a network are more active in order to manage their own contacts, they do this by trying to reduce the paths with other nodes in the network, which means increasing the number of direct links they have with other nodes. The node in this position have easy access to information and resources and hence are able to better control information spread in the network. Another method developed which attempts to quantify and identify important vertex in a network is Social capital, but in contrast to centrality  which tries to identify the important nodes in the network, this method focuses on the features of the network that contribute to the individual node\cite{borgatti2006identifying}.
+
+\subsection{Measures of Centrality}
+As highlighted previously various different measures of centrality have been developed over the years, However they are four basic highly developed measures, that other measured are derived from, this four basic centrality measure include: Degree centrality , Betweeness centrality, Closeness centrality and Eigenvector centrality which employs the similar concept used in the Google pageRank algorithm. The basic definitions of this measures and their various application in the various different type of graph, as well as the formulation and interpretation are discussed below.
+
+\subsubsection{Degree Centrality}
+This measure was introduced in the field of graph theory, degree centrality (DC)  ${\sigma_D}$ captures the a node contentedness in its neighborhood(direct hop distance). A vertex i is considered a hub in a network if its centrality score is high, meaning it has a large number of contact or edges \cite{freemanDevelopment}. In directed networks nodes normally have two separate measure of degree centrality, in-degree and out-degree.  The degree centrality of a vertex ${v}$, for a given graph ${G = (V, E)}$ with ${|V|} $vertices and ${|E|}$ edges, is defined as 
+$${C_D(v) = deg(v)}$$ 
+
+the equation above however is impacted by the size of the network, if the result is to be compared with other graph, the formula it normalized by dividing by ${n-1}$. this gives a probabilistic value between 1 and 0.
+
+
+\subsubsection{Closeness Centrality}
+This measure came about in the 1950s, it explored a different view in measuring the centrality of a node in a graph. it relates how one node in a network might control the  various communication that occur inside the network, by keeping track of relative distances of node ${i}$ to other nodes in the network. this measure is known to scale directly with distance i.e nodes twice as far, is half as central. Formally the Closeness centrality of a node can be defined as the average length of the shortest path between the node and all other nodes in the graph. in simple terms the central node in the graph have shorter access to the other nodes in the graph.  Mathematically it defined as the reciprocal of farness\cite{bavelas1950communication}
+$${C(x) = \frac{1}{\sum_{y}^{}d(y, x)} }$$
+
+where ${d(y, x)}$ represent the distance across x \& y. this formula normalized version is gotten by multiplying the above formula by ${N-1}$,  where ${N}$ is used to represent the number of nodes in the graph. this normalization allow graph of various different sizes to be compared
+
+\subsubsection{Betweenness Centrality}
+First introduced by Linton Freeman, he described it as a measure for quantifying the control of human on the communication between other humans in a social network. to quote him directly  'a point that falls on the communication paths between other points exhibits a potential for control of thier communication paths between other points exhibits a potential for control that defines the centrality of these points'\cite{freeman1977set}. this measure of centrality is used to ascertain the size of crossing point in between routes, a designated node is central if it lies in maximum number of shortest paths connecting distinct pairs of nodes on a network. Formally it is defined as quantifying number of times a node acts as a bridge along the shortest path between two other nodes. 
+Mathematically betweeness of a nodes is expressed as the ratio of  ${\frac{g_{jk}}{g_{jk}}}$ for all pairs of node, formally
+$${C_B(i) = \sum_{jk \neq k}^{}  {\frac{g_{jk}}{g_{jk}}} }$$
+
+where
+${g_{jk}(i)  }$ represent the number of shortest paths connecting ${jk}$ passing through ${i}$ , and ${g_{jk} }$ represent the total number of shortest paths
+
+The above formula is normalized by diving by ${\frac{(n-)(n-2)}{2}}$, which represents the number of pairs of vertices excluding the vertex itself.
+
+\subsubsection{Eigenvector Centrality}
+Introduced by Bonacich, it is also know as EigenCentrality. This measure showcase the idea that a node is only important if its neighborhood is also important i.e it's adjacent node centrality value factors into determining how important a node is. Unlike degree centrality which depends on having many connections regardless of whether this connection lead to isolated nodes, EigenCentrality measures says a central node should be connected to other powerful nodes.  a  well know variant of this centrality measure is the Google's PageRank algorithm. Mathematically eigenvector centrality can be described using adjacency matrix as follows: 
+
+for a given graph ${G = (V, E)}$ with ${|V|}$ number of vertices, \\
+Let ${A = (a_v, t)}$ be the adjacency matrix.. that is ${ (a_v, t)}$ has the value one(1) if there is a link between ${v}$ and ${t}$, it value is zero(1) when ${v}$ and ${t}$ are not connected. 
+the equation below defines the centrality score of ${v}$
+$${x_v = \frac{1}{\lambda} \sum_{t \in M(v) }^{}  x_t = \frac{1}{\lambda} \sum_{t \in G }^{} a_{v, t} x_t}$$
+
+with the first part of the equation representing the Neighborhood of ${x_v}$ , the second half representing the adjacency matrix of the graph and ${\lambda}$ is a constant. the equation can be written in vector notation as
+$${Ax = \lambda x}$$
+
+
+\section{Application of Centrality}
+\begin{enumerate}
+
+
+\item Centrality measures are used for understanding Information spread / diffusion 
+\begin{itemize}
+\item It is used to determine the extent information has spread ?
+\item Who are the most influential in spreading information ?
+\item Understand how does a top/ video become viral? 
+\item Reveal speader of infectious content in socially interactive network
+\end{itemize}
+
+\item Centrality is used in networks to Identify influential users / experts
+\begin{itemize}
+\item Recognize mportant nodes acting as focal point in technological network.
+\item Identify most influential personality or event in social network.
+\item Identifying topical experts
+\item Detect key strategies in a business-oriented network
+\item find purveyor(a person or group who spreads or promotes an idea) of content in a chain network
+\end{itemize}
+
+\item Centrality is used by businesses and Social media for Search and Recommendation
+\begin{itemize}
+\item Social media like Twitter use the measure to find people with similar tastes and recommend this people as friends
+\item Business like Amazon use this measure to recommend books to people based on other similar customer tastes 
+\end{itemize}
+
+
+\item Centrality is used for opinion mining 
+\begin{itemize}
+\item Identify people opinion on various topic 
+\item Used to summarized opinions like based on people opinions online how is most likely to win an election
+\end{itemize}
+
+\item Centrality is used for Spam detection
+\begin{itemize}
+\item Used to identify users with malicious intentions as well as identify spams in social networks.
+\item used to identify trustworthy entities, through mechanism like ratings. 
+\end{itemize}
+
+\item Mining information on recent events
+\begin{itemize}
+\item Used as valuable sources of information on events that are happening currently.  example it has been found that events like earthquakes are know to people in a relative area through tweets before they feel the tremor. as people instinctively tweet about such events. 
+\end{itemize}
+
+\item Several Centrality-based classification can be used to:
+\begin{itemize}
+\item Discover routes for efficient transmission.
+\item Measure cohesiveness between nodes in a network. 
+\end{itemize}
+\end{enumerate}
+
+\section{Information centric networking}
+
+The fundamental concept of Information centric networking according to \cite{ahlgrensurvey} is a set of interconnected pieces of information which can be addressed by their names for routing and managed by applications for services. This could be static or dynamically generated, real time video stream etc. The primary concern of the network here is to distribute , find and deliver information. 
+This approach is drastically different from IP which established communication between two hosts before content is transferred, the delivery of data in this network follows a source-driven approach. This approach uses a receiver-driven principle which means the users request content without knowing the host who will deliver the content, the network is responsible for mapping the request to where the requested content can be found, this idea of matching request to content rather than finding which endpoint can provide the content is key and this separation of naming from location is the fundamental idea of ICN.
+To be able to do this separation, the naming of content is done in such a way that its independent of the location the content resides on. This feature and the fact that the network has a native caching function that gives nodes in the network the ability to cache content for a while and be able to deliver them to requesting users hence enabling efficient delivery of content to users. 
+This idea of separating location from content name also support mobility. Even when users relocate and are connected to another node in the ICN network, since no IP address is used for routing nothing is affected, unlike the case of IP where the addresses needs to be updated. In an ICN network once content is requested it is cached and delivered to future request. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

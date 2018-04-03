@@ -1,0 +1,81 @@
+\chapter{Technical Approach and Evaluation}
+
+
+
+\section{Proposed framework }
+The Content Centric Networking (CCN) paradigm is considered the future architecture for the current internet, few solutions have been proposed that leverage information about  users  social communities to design efficient content replication schemes. 
+CCN approach uses in-networking caching to improve users experience when accessing data.  Online Social Networks (OSN) have become an important field in understanding how communication occur in a network of user alas how information or data is spread between individuals in this network.  Using the knowledge of Online Social Network Centrality and Information Centric Networking CCN paradigm, CDN Information distribution and retrival can be improved.
+
+Here we show a caching strategy for a CCN extended CDN network which considers the social semantics of the network when distributing or transferring content to be cached. Using Online Social Network Centrality Measures we identify central users in a network - people that are central to the various activities happening in the network(i.e act as bridge, receive the most attention from other users and whose interest are more likely to be explored by the many that follow or depend of them). The strategy exploits the social proximity of this central users to other users in the network, using this relationship key strategic location where content can be cached will be identified and recommended. 
+
+Using simulation and data on user from online social network services like Facebook, we demonstrate the value of using centrality do determine where in the network certain information type can be cached, taking into consideration the centrality of users interested in the data and the proximity of other interest users to the central users.
+
+
+\section{Network model}
+This section will illustrate in detail the model used, we assume the CDN network architecture extends content centric networking. As the internet continue to evolve as more of a social oriented network. We propose a social network model built over thee CCN network, modeling how user interact over the network. Using a use case we model the interactions of users in a social network built over a content centric network. We point out the limitation of current CDN networks, showcasing how the idea of social centrality on an CCN extend CDN can improve retrieving and storage of data. 
+
+
+\subsection{Content Centric Networking}
+CCN architecture is widely received among the various existing ICN architecture. This communication architecture uses two attributes namely Data and interest. Specifically user request content by broadcasting their interest message over the CCN network, among the nodes who hear receive this broadcast, any node with the requested content will respond with a data message. The caching of data messages by nodes is important as caching policies are used to regulate message caching as these caches have finite space. Ensuring that content is cached in strategic positions in the network so users can access them easily is the goal of this project. 
+
+
+\subsection{Social Network Model}
+Online Social networks allow user to share different content with the world or their close acquaintances.  Friends may also receive update about the activities of their other acquaintances, and may further choose to share this content continuing the circle, causing this content to spread around such groups. With this observation we model this relationship as a social network where users are able to either distribute of receive information from and to members of their communities, and to simulate the interaction of users in this social network, we employ social network analysis.
+
+\subsection{Socially-Aware Caching Strategy}
+Future internet will rely on CCN architecture, as more groups in social networks will continue to organize themselves and continue to exchange large amount of content through this network. We prose using the social information of users and centrality measures to perform content centric networking caching. This will take into consideration the proximity of users, the centrality of users relative to other users in the communities. This relationship will be exploited to recommend where in the network content can be cached, as an example a popular Youtuber with lots of followers and subscribers, when this person produces content online, many of the followers will most likely access this content and in turn might recommend this video to their subscribers or followers, this circle goes on. 
+
+In the strategy we propose using centrality and proximity relationships of users in the network to identify and recommend where data should be cached in the network, to allow user access to this data using the minimum distance. Hence improving the overall access of users to content in the network. 
+
+
+\section{Influential Users Detection}
+Using Betweenness and Eigenvector centrality measures we detect users central to the network. This centrality measures like the others help measure the importance of users in a network. By using both of this measures we are able to identify users who can act as some sort of a bridge between content and the other users. We measure the overall average of every user in the network, those with the highest score are considered central. 
+Hence the proximity of this central users to other users will be used in determine possible places content can be cached so every user can easily access this content.
+
+
+\section{Simulation}
+
+This section describes the simulation environment and the parameters used to adjust our model to evaluate our social aware strategy. Below we give a more in-depth and general description of our simulation environment. 
+
+\subsection{Social Network Topology}
+To model the social relationship between users as a network we use publicly available dataset, the Stanford community provide a Facebook dataset, this dataset represent individual as node and an edge list as the relationship between this individual, this data comprises of 4, 039 users, 88,234 friends relationships and each user counts in average 44 relationships. Our simulation experiments is performed modelling this social network relationship as a graph.  This dataset consists of circles ( or friends lists) from Facebook. This anonymized dataset includes node features (profiles), circles, and ego networks. The edges are undirectected.
+
+We consider a future content-centric internet where CDN networks extends the ICN CCN architecture. This network architecture is structurally equivalent to today’s internet. The edges described in the data could be of any form: friendship, collaboration, following or mutual interest. Here we specifically study and build our model over Facebook’s social network.
+
+
+
+\subsection{Simulation Tools}
+
+To evaluate our social aware caching strategy for this network, we implement a discrete-event simulation scenario in python Jupyter notebook. Using various open source libraries like, matplotlib a python plotting library for making publication quality figures in a different format across different platforms. plotly a graphing library for making interactive, publication-quality graphs. networkx a collection of network analysis tools with the emphasis on efficiency, portatbility and ease of use. Networkx is open source and free. numpy  adds support for large, multi-dimensional arrays and matrices along with a large collection of high level mathematical functions to operate on these arrays and finally datascience an open source python library used for scientific computing and technical computing. 
+
+We demonstrate this caching strategy using online social network analysis measures like centrality which detect influential user in social network community, implementing a parallel betweenness centrality algorithm we demonstrate how this strategy can be used alongside already existing Content Centric Network caching strategies and replacement policies in an ICN network. Using this framework along side traditional replacement policies like Last Recently Used(LRU), Random(RAND) and FIFO etc. 
+
+
+
+\section{Simulation Experiment}
+
+We exploit available social structures and employ already existing in literature graph representation of networks and proposes a method where data is stored on central nodes in the network because of their significance. This attribute stems from the extent to which they hold an intermediate position between the current node and the rest of the network nodes. The out of horizon demand is inferred by the value of the centrality of the node relative to other nodes in the network, introduced to quantify this significance and accordingly pick the nodes to take part in the local solution. Having exploited the centrality of nodes in a network, communication and computation cost are avoided as they is no need to apply any mapping mechanism for capturing this demand load.
+This solution is not guaranteed to always reach the optimal, but solution show that it achieves satisfying convergence, especially when applied on graphs incorporating with some real-world social characteristics. In the future we plan to extend this work to a more general solution, since the model studied here is constrained according to uniform demand hypothesis. Additionally, other attributes and characteristics such as correlated load demands which generally better model real-world social user nodes communication are characteristically opportunistically considered. 
+We propose a social aware caching strategy for content centric networks. This strategy uses information about users in a network by, determining where to cache content by considering the relationship between users.  Based on extensive simulations experiments, we showed that our caching strategy improves the caching performances of CCN extended CDN over tradition CDN performances on the cache hit and stretch. 
+Our objective is to evaluate the caching performances of the CCN extended CDN network architecture using the proposed social-caching strategy to the performance of traditional CDN architecture without the social caching strategy. Using the various social network analysis centrality measures specifically centrality we simulate the behavioral performance is different similar scenarios. For our purpose the result we like to show was that of be behavioral performances of the system when compared to the computed betweenness centrality measure of social network analysis.  The other measure also show promising result in deferent situation. 
+
+
+
+\section{Results}
+
+The result of our simulation experiment is presented in the figure below. Below are four figures. Two of each depict each of our metric: Cache Hit, Stretch. All the figures share the same axes: the x-axis is the cache size; the y-axis is the probability. For each simulation we performed 100 runs using different social network activity traces and provide the average value and the confidence intervals. 
+Figure 2(a) and 2(b) illustrate the cache hit performance of the CDN network without the social aware caching strategy. Without the strategy, the cache hit of the CDN achieves low values and it barely reaches 5 percent. On the other hand, using the social aware caching strategy increases significantly the cache hit and reaches 30 percent using betweenness centrality measure with the Facebook data set. 
+
+The low performance of CDN are due to the use of large scale and realistic social realistic social and network topologies. Indeed, the long routes traversed by the content after the cache hit and its computation works as follows. In every hop passed by data or content, the cache hit gets updated with a hit or miss. If the requested content is present at hop n, we obtain a single hit and there have been n-1 hops without the requested content. As the cache Hit metric is the ration of hit about the number of miss, the longer the path to find the content is, the lower the cache hits it. In our case, our strategy pro-actively caches content on a central node on the network paths. This social aware caching strategy succeeds to make the content more available and improves drastically the caching performance of CCN extended CDN.
+
+The Stretch metric is presented in figure ab. This metric is in direct correlation with the cache hit. Out using our strategy, content traverse the shortest path to get to the requester from a specified node. Using the social aware caching strategy, the distance to get the content has greatly redued, in this case content takes on average half the previous shortest path to reach a specific node. As an aside it also crucial to note that the number of user in the data set has not impact on the performance of this strategy. 
+
+
+\section{Evaluation Results}
+
+Extending the CDN architecture with CCN-base architecture and social aware caching strategy for content storage and delivery, we can intuitively imagine that the network load can be largely reduced depending on the proximity of users to the central nodes in the network. Here we performed some evaluation to prove the advantages of a CCN extended CDN architecture. Compared to the existing current architecture, using many users on an online social network.
+
+In our simulation, we took an example of friend’s relationship in a Facebook network. We consider the use of CDN with one server somewhere and one at the peering point of the social network. To compare with the CCN social caching solution, we assume both the same content is delivered from the CDN as well as CCN extended CDN network. For CDN to be effective the servers need to have a lot of contents; this prevents having CDN nodes close to end users. In the ICN CCN solution, the community and social proximity of user in their social communities are recognized and keep track of in their router table, whereas in the case of a CDN, it has to be provisioned using some defined choices, hence creating a trade-off between a poor hit ratio if the servers are close to end user and the need for huge databases if they are in the core network. For this study we used a two level CDN architecture with contents stored in a fixed location and a peering point for the second level. The latency to reach those nodes would be an intermediate value between what it would be to reach network devices among the different communities in the network. For the operator network topology, we assumed a hierarchical three-level network topology, with caching facility at each level of the CCN architecture. 
+
+
+
